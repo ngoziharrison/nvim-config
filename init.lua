@@ -2,6 +2,7 @@ vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
+vim.cmd("set conceallevel=2")
 
 vim.g.mapleader = " "
 
@@ -34,7 +35,19 @@ vim.opt.linebreak = true
 
 local builtin = require("telescope.builtin")
 local ntree = require("neo-tree")
-vim.keymap.set("n", "<C-p>", builtin.find_files, {})
+vim.keymap.set("i", "kj", "<esc>", {})
+vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>vf', builtin.spell_suggest, {})
 vim.keymap.set('n', '<leader>tr', ':Neotree toggle<CR>')
+--Keymaps
+
+vim.keymap.set('n', 'j', 'gj',  {})
+vim.keymap.set('n', 'k', 'gk',  {})
+vim.keymap.set('n', 'H', '^',  {})
+vim.keymap.set('n', 'L', '$',  {})
+
+local wilder = require('wilder')
+wilder.setup({modes = {':', '/', '?'}})
+
