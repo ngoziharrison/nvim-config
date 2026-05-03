@@ -51,3 +51,6 @@ vim.keymap.set('n', 'L', '$',  {})
 local wilder = require('wilder')
 wilder.setup({modes = {':', '/', '?'}})
 
+vim.g.vimtex_view_method = 'skim'
+
+
